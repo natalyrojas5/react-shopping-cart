@@ -7,14 +7,14 @@ import { ceviche, huancaina, causaDeAtun, majarisco, chaufa, tallarin, caldoDGal
 
 
 /* PAGES ------------------*/
-const PAGE_foodsS = 'foodss';
+const PAGE_foods = 'foods';
 const PAGE_CART = 'cart';
 
 /* LOCALSTORAGE COMIDAS ------------*/
-const foodssLS = JSON.parse(localStorage.getItem('foodss')) || '[]';
+const foodsLS = JSON.parse(localStorage.getItem('foods')) || [];
 
 function App() {
-  const [cart, setCart] = useState(foodssLS);
+  const [cart, setCart] = useState(foodsLS);
   const [foods] = useState([
     {
       name: 'Ceviche',
@@ -56,9 +56,10 @@ function App() {
   const [page, setPage] = useState(PAGE_CART);
 
   useEffect(() => {
-    localStorage.setItem('foodss', JSON.stringify(cart));
+    localStorage.setItem('foods', JSON.stringify(cart));
 
   }, [cart])
+
 
   const addCart = (foods) => {
     debugger
@@ -107,8 +108,8 @@ function App() {
     ))
   )
 
-  const renderfoodss = () => (
-    cart?.length > 0 ?
+  const renderfoods = () => (
+    cart?.length ?
       cart?.map((foods, id) => (
         <div className="col-12 col-sm-6 col-md-6 col-xl-3  text-center my-4" key={id}>
           <img src={foods.image} className="rounded w-100 image-foods" alt={foods.name} />
@@ -127,7 +128,7 @@ function App() {
       ))
       :
       <div className="col-sm-12 text-center ">
-        <p className="h4">No se encontro recetas</p>
+        <p className="h4">No se encontro comidas</p>
       </div>
   )
 
@@ -142,7 +143,7 @@ function App() {
           <div className="d-flex-custom">
             <button
               className="btn btn-warning"
-              onClick={() => navigationTo(PAGE_foodsS)}
+              onClick={() => navigationTo(PAGE_foods)}
             >
               Ver comidas agregados
             </button>
@@ -152,11 +153,12 @@ function App() {
               onClick={() => navigationTo(PAGE_CART)}>
               <div className="m-auto">
                 <span className="mr-3">Ir a carrito</span>
-              <span className="mr-3">({cart.length})</span>
-              <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                
-              </svg>
+                {console.log(cart?.length)}
+                <span className="mr-3">({cart?.length})</span>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+
+                </svg>
               </div>
             </button>
           </div>
@@ -166,7 +168,7 @@ function App() {
       <div className="row">
 
         {page === PAGE_CART && renderCart()}
-        {page === PAGE_foodsS && renderfoodss()}
+        {page === PAGE_foods && renderfoods()}
 
       </div>
     </div>

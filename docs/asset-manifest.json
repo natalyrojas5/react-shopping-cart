@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "./static/css/main.60fc69ee.chunk.css",
+    "main.js": "./static/js/main.7db987bb.chunk.js",
+    "main.js.map": "./static/js/main.7db987bb.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c900da24.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c900da24.js.map",
+    "static/js/2.8aeee44d.chunk.js": "./static/js/2.8aeee44d.chunk.js",
+    "static/js/2.8aeee44d.chunk.js.map": "./static/js/2.8aeee44d.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.b9ad43fc95f594f37aa29c9781003261.js": "./precache-manifest.b9ad43fc95f594f37aa29c9781003261.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.60fc69ee.chunk.css.map": "./static/css/main.60fc69ee.chunk.css.map",
+    "static/js/2.8aeee44d.chunk.js.LICENSE.txt": "./static/js/2.8aeee44d.chunk.js.LICENSE.txt",
+    "static/media/Majarisco.jpg": "./static/media/Majarisco.277b6782.jpg",
+    "static/media/caldo-de-gallina.jpg": "./static/media/caldo-de-gallina.e4680b79.jpg",
+    "static/media/causa-de-atun.jpg": "./static/media/causa-de-atun.d8f537f1.jpg",
+    "static/media/ceviche.jpg": "./static/media/ceviche.f1d8d8cf.jpg",
+    "static/media/chaufa.jpg": "./static/media/chaufa.6c36ea57.jpg",
+    "static/media/huancaina.jpg": "./static/media/huancaina.c3001ed3.jpg",
+    "static/media/tallarin.jpg": "./static/media/tallarin.56d2c739.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c900da24.js",
+    "static/js/2.8aeee44d.chunk.js",
+    "static/css/main.60fc69ee.chunk.css",
+    "static/js/main.7db987bb.chunk.js"
+  ]
+}
